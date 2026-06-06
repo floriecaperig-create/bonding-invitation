@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Very Important Friendship Matter</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align:center;
+            background: linear-gradient(135deg,#89f7fe,#66a6ff);
+            height:100vh;
+            overflow:hidden;
+        }
+
+        .container{
+            margin-top:100px;
+        }
+
+        h1{
+            font-size:40px;
+        }
+
+        p{
+            font-size:20px;
+        }
+
+        button{
+            padding:15px 30px;
+            font-size:20px;
+            border:none;
+            border-radius:12px;
+            cursor:pointer;
+            margin:20px;
+        }
+
+        #yesBtn{
+            background:#28a745;
+            color:white;
+        }
+
+        #noBtn{
+            background:#dc3545;
+            color:white;
+            position:absolute;
+        }
+
+        #result{
+            margin-top:40px;
+            font-size:30px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📜 Official Friendship Contract</h1>
+
+    <p>
+        You are hereby summoned to attend our bonding
+        before June 15 at <b>Almont Inland Resort</b>.
+    </p>
+
+    <p>
+        Please choose your answer carefully.
+    </p>
+
+    <button id="yesBtn" onclick="accepted()">
+        YES, I WILL GO 🎉
+    </button>
+
+    <button id="noBtn">
+        No
+    </button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+
+    const x = Math.random() * (window.innerWidth - 150);
+    const y = Math.random() * (window.innerHeight - 100);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+
+let clickCount = 0;
+
+document.body.addEventListener("click", function(){
+
+    clickCount++;
+
+    if(clickCount === 15){
+        accepted();
+    }
+});
+
+function accepted(){
+
+    document.body.innerHTML = `
+        <div style="margin-top:120px;font-family:Arial;">
+            <h1>🎊 ATTENDANCE CONFIRMED 🎊</h1>
+
+            <h2>
+                Thank you for choosing the correct answer.
+            </h2>
+
+            <p>
+                See you at Almont Inland Resort before June 15!
+            </p>
+
+            <p>
+                Friendship level unlocked: LEGENDARY ⭐
+            </p>
+        </div>
+    `;
+
+    startConfetti();
+}
+
+function startConfetti(){
+
+    for(let i=0;i<150;i++){
+
+        let confetti = document.createElement("div");
+
+        confetti.innerHTML = "🎉";
+
+        confetti.style.position = "fixed";
+        confetti.style.left = Math.random()*100+"vw";
+        confetti.style.top = "-50px";
+        confetti.style.fontSize = "30px";
+
+        document.body.appendChild(confetti);
+
+        let speed = Math.random()*5+2;
+
+        let pos = -50;
+
+        let interval = setInterval(()=>{
+
+            pos += speed;
+
+            confetti.style.top = pos+"px";
+
+            if(pos > window.innerHeight){
+                clearInterval(interval);
+            }
+
+        },20);
+    }
+}
+
+</script>
+
+</body>
+</html>
