@@ -1,81 +1,229 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Very Important Friendship Matter</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOT TEA SIS BONDING</title>
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            text-align:center;
-            background: linear-gradient(135deg,#89f7fe,#66a6ff);
-            height:100vh;
-            overflow:hidden;
-        }
+<style>
 
-        .container{
-            margin-top:100px;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
 
-        h1{
-            font-size:40px;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-        p{
-            font-size:20px;
-        }
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+radial-gradient(circle at top left,#ff80d5,#9f7cff),
+radial-gradient(circle at bottom right,#6a5cff,#ff5ebc);
+position:relative;
+}
 
-        button{
-            padding:15px 30px;
-            font-size:20px;
-            border:none;
-            border-radius:12px;
-            cursor:pointer;
-            margin:20px;
-        }
+body::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle,rgba(255,255,255,.15) 2px,transparent 2px);
+background-size:60px 60px;
+animation: floatbg 20s linear infinite;
+}
 
-        #yesBtn{
-            background:#28a745;
-            color:white;
-        }
+@keyframes floatbg{
+from{transform:translateY(0);}
+to{transform:translateY(-200px);}
+}
 
-        #noBtn{
-            background:#dc3545;
-            color:white;
-            position:absolute;
-        }
+.card{
+width:90%;
+max-width:700px;
+padding:40px;
+border-radius:35px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(20px);
+box-shadow:
+0 0 40px rgba(255,105,180,.4),
+0 0 80px rgba(138,43,226,.3);
+text-align:center;
+color:white;
+position:relative;
+z-index:2;
+animation: floatCard 4s ease-in-out infinite;
+}
 
-        #result{
-            margin-top:40px;
-            font-size:30px;
-            font-weight:bold;
-        }
-    </style>
+@keyframes floatCard{
+50%{
+transform:translateY(-10px);
+}
+}
+
+.title{
+font-size:3rem;
+font-weight:800;
+background:linear-gradient(90deg,#fff,#ffd1f5);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 20px rgba(255,255,255,.5);
+}
+
+.subtitle{
+margin-top:10px;
+font-size:1.2rem;
+font-weight:700;
+color:#ffe3ff;
+}
+
+.desc{
+margin-top:25px;
+font-size:1.1rem;
+line-height:1.8;
+}
+
+.info{
+margin-top:25px;
+padding:15px;
+border-radius:20px;
+background:rgba(255,255,255,.12);
+}
+
+.question{
+font-size:2rem;
+margin-top:30px;
+font-weight:700;
+}
+
+.buttons{
+margin-top:30px;
+}
+
+button{
+border:none;
+cursor:pointer;
+transition:.3s;
+}
+
+#yesBtn{
+padding:18px 40px;
+font-size:1.2rem;
+font-weight:700;
+border-radius:50px;
+background:linear-gradient(45deg,#ff5ebc,#b14dff);
+color:white;
+box-shadow:0 0 25px rgba(255,105,180,.6);
+}
+
+#yesBtn:hover{
+transform:scale(1.08);
+}
+
+#noBtn{
+position:absolute;
+padding:15px 30px;
+border-radius:50px;
+background:#ff6fa8;
+color:white;
+font-weight:700;
+top:85%;
+left:65%;
+}
+
+.floating{
+position:absolute;
+font-size:2rem;
+animation:floating 6s infinite ease-in-out;
+}
+
+@keyframes floating{
+50%{
+transform:translateY(-25px);
+}
+}
+
+.cup{
+top:8%;
+left:10%;
+}
+
+.heart{
+right:10%;
+top:10%;
+}
+
+.result{
+display:none;
+}
+
+.success{
+font-size:3rem;
+font-weight:800;
+}
+
+.small{
+margin-top:15px;
+font-size:1.2rem;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="floating cup">🧋</div>
+<div class="floating heart">💜</div>
 
-    <h1>📜 Official Friendship Contract</h1>
+<div class="card" id="mainCard">
 
-    <p>
-        You are hereby summoned to attend our bonding
-        before June 15 at <b>Almont Inland Resort</b>.
-    </p>
+<h1 class="title">HOT TEA SIS BONDING ☕</h1>
 
-    <p>
-        Please choose your answer carefully.
-    </p>
+<p class="subtitle">✨ ANO TARA KAY PANAGSA RA ✨</p>
 
-    <button id="yesBtn" onclick="accepted()">
-        YES, I WILL GO 🎉
-    </button>
+<div class="desc">
 
-    <button id="noBtn">
-        No
-    </button>
+Dear Sis,
 
-    <div id="result"></div>
+<br><br>
+
+Official invitation ni para sa:
+
+<b>chikahan, kwentuhan, tawanan, food tripan,
+pagreklamo sa life, ug paghilak sa acads while eating. 🤣</b>
+
+<br><br>
+
+Kay panagsa ra ta magkakita,
+ug basin mauna pa ang graduation sa uban kaysa atong bonding.
+
+</div>
+
+<div class="info">
+📅 Before June 15
+<br>
+📍 Almont Inland Resort
+</div>
+
+<div class="question">
+Will you join us?
+</div>
+
+<div class="buttons">
+<button id="yesBtn" onclick="acceptInvite()">
+YES, I WILL GO 💖
+</button>
+</div>
+
+<button id="noBtn">
+NO 😒
+</button>
 
 </div>
 
@@ -83,80 +231,80 @@
 
 const noBtn = document.getElementById("noBtn");
 
-noBtn.addEventListener("mouseover", () => {
+noBtn.addEventListener("mouseover",()=>{
 
-    const x = Math.random() * (window.innerWidth - 150);
-    const y = Math.random() * (window.innerHeight - 100);
+const x=Math.random()*(window.innerWidth-150);
+const y=Math.random()*(window.innerHeight-100);
 
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+
 });
 
-let clickCount = 0;
+function acceptInvite(){
 
-document.body.addEventListener("click", function(){
+document.getElementById("mainCard").innerHTML=`
 
-    clickCount++;
+<div class="success">
+🎉 ATTENDANCE CONFIRMED 🎉
+</div>
 
-    if(clickCount === 15){
-        accepted();
-    }
-});
+<div class="small">
+Yehey! See you sa bonding! 💖
+<br><br>
+Prepare your:
+<br>
+☕ Chika
+<br>
+🍟 Gutom
+<br>
+😂 Katawa
+<br>
+📸 Group Pictures
+<br><br>
 
-function accepted(){
+Friendship Level:
+<b>LEGENDARY SIS ✨</b>
+</div>
 
-    document.body.innerHTML = `
-        <div style="margin-top:120px;font-family:Arial;">
-            <h1>🎊 ATTENDANCE CONFIRMED 🎊</h1>
+`;
 
-            <h2>
-                Thank you for choosing the correct answer.
-            </h2>
+confetti();
 
-            <p>
-                See you at Almont Inland Resort before June 15!
-            </p>
-
-            <p>
-                Friendship level unlocked: LEGENDARY ⭐
-            </p>
-        </div>
-    `;
-
-    startConfetti();
 }
 
-function startConfetti(){
+function confetti(){
 
-    for(let i=0;i<150;i++){
+for(let i=0;i<200;i++){
 
-        let confetti = document.createElement("div");
+let el=document.createElement("div");
 
-        confetti.innerHTML = "🎉";
+el.innerHTML=["💖","✨","💜","🎉","☕"][Math.floor(Math.random()*5)];
 
-        confetti.style.position = "fixed";
-        confetti.style.left = Math.random()*100+"vw";
-        confetti.style.top = "-50px";
-        confetti.style.fontSize = "30px";
+el.style.position="fixed";
+el.style.left=Math.random()*100+"vw";
+el.style.top="-50px";
+el.style.fontSize="30px";
 
-        document.body.appendChild(confetti);
+document.body.appendChild(el);
 
-        let speed = Math.random()*5+2;
+let pos=-50;
+let speed=Math.random()*6+2;
 
-        let pos = -50;
+let fall=setInterval(()=>{
 
-        let interval = setInterval(()=>{
+pos+=speed;
+el.style.top=pos+"px";
 
-            pos += speed;
+if(pos>window.innerHeight){
+clearInterval(fall);
+el.remove();
+}
 
-            confetti.style.top = pos+"px";
+},20);
 
-            if(pos > window.innerHeight){
-                clearInterval(interval);
-            }
+}
 
-        },20);
-    }
 }
 
 </script>
